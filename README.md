@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Instrucciones
+- Clone the project to a local folder with the following command
+```bash
+git clone git@github.com:christianSr93/AutoComplete.git
+```
+- Download and install node and npm using the following link
+```bash
+https://nodejs.org/en/download/
+```
+- Check that the installation is correct with the following commands
+```bash
+node -v
+npm -v
+```
+- Navigate to the /AutoComplete folder and install the project dependencies with the following command
+```bash
+npm install
+```
+-  Execute the following command to start the application with the following command
+```bash
+npm start
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Questions
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. What is the difference between Component and PureComponent? give an
+example where it might break my app.
+- The main difference is that a PureComponent uses the shouldComponentUpdate() function and a Component does not.
+- When using pureComponent the component may not have the expected rendering performance.
+2. Context + ShouldComponentUpdate might be dangerous. Can think of why is
+that?
+- Because context is used to communicate states with all components, if shouldComponentUpdate is used, the re-rendering is cut off and the context may not be propagated to all components.
+3. Describe 3 ways to pass information from a component to its PARENT.
+- calling a parent function from the child component to pass data to the parent
+- using redux
+- using context
+4. Give 2 ways to prevent components from re-rendering.
+- using memorization (useMemo, useCallback)
+- using PureComponents
+5. What is a fragment and why do we need it? Give an example where it might
+break my app.
+- Is used to group a list of children without adding extra nodes to the DOM (unnecessary divs).
+- React components need a parent node to be rendered, usually a div or a react fragment, if you don't have any of these our code will not compile.
+6. Give 3 examples of the HOC pattern.
+- 
+7. what's the difference in handling exceptions in promises, callbacks and
+async...await.
+- Callbacks are functions that are passed to another function and when the first one is finished executing, it executes the second one.
+- A promise is a function that we assure that it is going to be executed in the future, it can be resolved successfully or not, with the promises we can make a state of "pause" in the execution of the code until this promise is resolved.
+- Async and await basically are similar to a promise, we can make an asynchronous function (async) that will return a value and pause the code with an await to have that value and continue the execution.
+8. How many arguments does setState take and why is it async.
+- 2
+- Because it can result in an expensive operation, if it were synchronous, the browser or the compiler would have to wait until this operation is finished, which may result in the browser stopping responding.
+9. List the steps needed to migrate a Class to Function Component.
+- Inline CSS
+- CSS in external file
+- Styled Components
+- Sass & SCSS
+10. List a few ways styles can be used with components.
+- 
+11. How to render an HTML string coming from the server.
+-
